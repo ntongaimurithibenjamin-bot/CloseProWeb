@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+
+/*@theme {
+  --bounce: fadeIn 2s ease-in 10 forwards;
+}
+ @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+/* src/index.css *
+@theme {
+  --animate-wave-stop: wave 2s ease-in-out 10 forwards;
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+/* src/index.css *
+@theme {
+  --animate-dot-wave: dot-wave 1.5s ease-in-out 13 forwards;
+
+  @keyframes dot-wave {
+    0%, 100% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-6px); opacity: 1; }
+  }
+}
+/* src/index.css *
+@theme {
+  --animate-dot-wave: dot-wave 1.5s ease-in-out 13 forwards;
+
+  @keyframes dot-wave {
+    0%, 100% { transform: translateY(0); opacity: 0.2; }
+    50% { transform: translateY(-6px); opacity: 1; }
+  }
+}*/
+
+@tailwind utilities;
+
+@layer utilities {
+  .animate-infinite-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 40s linear infinite;
+  }
+
+  /* Stops the scroll when the user interacts with a listing */
+  .animate-infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Move half-way (the length of one set) */
+    }
+  }
+}
+
+
